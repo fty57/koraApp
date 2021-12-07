@@ -6,7 +6,6 @@ import {
      TouchableOpacity,
      StyleSheet,
      ImageBackground,
-     SafeAreaView
 } from 'react-native'
 
 const image = { uri: 'https://i.pinimg.com/originals/6d/6d/a1/6d6da1386014c5a3d5877a14488eeb5d.jpg' }
@@ -22,7 +21,11 @@ export default props => {
      const [state, setState] = useState(initialState)
 
      const handleChangeText = (value, string) => {
-          setState({ ...state, [string]: value })
+          setState({ ...state, [string] : value })
+     }
+
+     const addNewUser = () => {
+          console.log(state)
      }
 
      return (
@@ -54,17 +57,6 @@ export default props => {
                          </View>
 
                          <View style={styles.card}>
-                              <Text style={styles.cardTitle}>Confirmação de Senha:</Text>
-                              <TextInput
-                                   secureTextEntry={true}
-                                   placeholder='********'
-                                   style={styles.cardInput}
-                                   value={state.confirmPassword}
-                                   onChangeText={(value) => handleChangeText(value, 'confirmPassword')}
-                              />
-                         </View>
-
-                         <View style={styles.card}>
                               <Text style={styles.cardTitle}>Senha:</Text>
                               <TextInput
                                    secureTextEntry={true}
@@ -75,7 +67,19 @@ export default props => {
                               />
                          </View>
 
-                         <TouchableOpacity style={styles.button}>
+                         <View style={styles.card}>
+                              <Text style={styles.cardTitle}>Confirmação de Senha:</Text>
+                              <TextInput
+                                   secureTextEntry={true}
+                                   placeholder='********'
+                                   style={styles.cardInput}
+                                   value={state.confirmPassword}
+                                   onChangeText={(value) => handleChangeText(value, 'confirmPassword')}
+                              />
+                         </View>
+
+
+                         <TouchableOpacity style={styles.button} onPress={()=> addNewUser}>
                               <Text style={styles.buttonText}>
                                    CONTINUAR
                               </Text>
