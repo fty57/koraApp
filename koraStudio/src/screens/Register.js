@@ -8,6 +8,8 @@ import {
      ImageBackground,
 } from 'react-native'
 
+import firebase from '../firebase/firebase-config'
+
 const image = { uri: 'https://i.pinimg.com/originals/6d/6d/a1/6d6da1386014c5a3d5877a14488eeb5d.jpg' }
 
 export default props => {
@@ -21,11 +23,22 @@ export default props => {
      const [state, setState] = useState(initialState)
 
      const handleChangeText = (value, string) => {
-          setState({ ...state, [string] : value })
+          setState({ ...state, [string]: value })
      }
 
-     const addNewUser = () => {
-          console.log(state)
+     const addNewUser = async () => {
+          // Usar Bycrypt na senha
+          // if (state.password === state.confirmPassword) 
+          try {
+               await firebase.db.collection('users').add({
+                    name: state.name,
+                    email: state.email,
+                    password: state.password, 
+               })
+               console.log('OK')
+          } catch (e) {
+               console.log(error)
+          }
      }
 
      return (
@@ -79,7 +92,7 @@ export default props => {
                          </View>
 
 
-                         <TouchableOpacity style={styles.button} onPress={()=> addNewUser}>
+                         <TouchableOpacity style={styles.button} onPress={() => addNewUser}>
                               <Text style={styles.buttonText}>
                                    CONTINUAR
                               </Text>
@@ -87,14 +100,14 @@ export default props => {
 
 
                          <View style={styles.terms}>
-                              <Text style={{color:'white'}}>
+                              <Text style={{ color: 'white' }}>
                                    Ao tocar no botão 'Continuar' você aceita nossos{" "}
                                    <Text style={styles.underlineText}>
-                                   termos de uso
+                                        termos de uso
                                    </Text>
                                    {" "} e {" "}
                                    <Text style={styles.underlineText}>
-                                   política de privacidade
+                                        política de privacidade
                                    </Text>
                               </Text>
                          </View>
