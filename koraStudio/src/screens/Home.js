@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements'
 
 
 export default props => {
-     const image = { uri: 'https://avatarfiles.alphacoders.com/108/thumb-108953.png' }
+     
      return (
           <View>
                <View style={styles.navbar}>
@@ -22,7 +22,7 @@ export default props => {
                          <TouchableOpacity>
                               <Image
                                    style={styles.profileImage}
-                                   source={image}
+                                   source={require('../../assets/img/profileGirl.png')}
                               />
                          </TouchableOpacity>
                     </View>
