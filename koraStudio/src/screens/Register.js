@@ -8,8 +8,6 @@ import {
      ImageBackground,
 } from 'react-native'
 
-import firebase from '../firebase/firebase-config'
-
 const image = { uri: 'https://i.pinimg.com/originals/6d/6d/a1/6d6da1386014c5a3d5877a14488eeb5d.jpg' }
 
 export default props => {
@@ -29,16 +27,7 @@ export default props => {
      const addNewUser = async () => {
           // Usar Bycrypt na senha
           // if (state.password === state.confirmPassword) 
-          try {
-               await firebase.db.collection('users').add({
-                    name: state.name,
-                    email: state.email,
-                    password: state.password, 
-               })
-               console.log('OK')
-          } catch (e) {
-               console.log(error)
-          }
+          console.log('Usuário adicionado')
      }
 
      return (

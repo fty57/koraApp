@@ -4,17 +4,17 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from '../screens/Login'
 import Register from '../screens/Register'
-
-// Tem aluma coisa de errado nas rotas!!!
+import Home from '../screens/Home'
 
 const Stack = createStackNavigator();
 
 export default props =>{
      return(
           <NavigationContainer>
-               <Stack.Navigator initialRouteName='Login'>
+               <Stack.Navigator initialRouteName='Home'>
                     <Stack.Screen name='Login' component={Login}/>
                     <Stack.Screen name='Register' component={Register}/>
+                    <Stack.Screen name='Home' component={Home}/>
                </Stack.Navigator>
           </NavigationContainer>
      )
