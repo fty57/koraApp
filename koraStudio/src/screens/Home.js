@@ -1,43 +1,35 @@
 import React from 'react'
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import { Icon } from 'react-native-elements'
-
+import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { Header } from 'react-native-elements'
 
 
 export default props => {
-     
      return (
           <View>
-               <View style={styles.navbar}>
-                    <View style={styles.navbarLogo}>
-                         <Image 
-                         style={styles.Logo}
-                         source={require('../../assets/img/kora.png')}
-                         />
-                    </View>
-                    <View style={styles.navbarIcons}>
-                         <TouchableOpacity style={styles.seachIcon}>
-                              <Icon name='search-outline' type='ionicon' color='#000' />
-                         </TouchableOpacity>
+               <Header
+                    backgroundColor='#000'
+                    leftComponent={
+                         <View style={styles.navbarLogo}>
+                              <Image
+                                   style={styles.Logo}
+                                   source={require('../../assets/img/kora.png')}
+                              />
+                         </View>
+                    }
+                    rightComponent={
                          <TouchableOpacity>
                               <Image
                                    style={styles.profileImage}
                                    source={require('../../assets/img/profileGirl.png')}
                               />
                          </TouchableOpacity>
-                    </View>
-               </View>
-               
+                    }
+               />
           </View>
      )
 }
 
 const styles = StyleSheet.create({
-     navbar: {
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: "space-between"
-     },
      navbarLogo: {
           marginTop: 10,
           marginLeft: 10

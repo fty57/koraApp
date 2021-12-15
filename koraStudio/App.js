@@ -1,11 +1,11 @@
-import React from 'react';
-import { SafeAreaProvider} from 'react-native-safe-area-context'
-import Router from './src/stack/Router'
+import React from 'react'
+import { View } from 'react-native'
+import Home from './src/screens/Home'
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <Router/>
-    </SafeAreaProvider>
+    <View>
+      <Home />
+    </View>
   );
 }
