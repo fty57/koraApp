@@ -25,6 +25,10 @@ export default props => {
                          </TouchableOpacity>
                     }
                />
+
+               <ScrollView>
+                    
+               </ScrollView>
           </View>
      )
 }
