@@ -27,7 +27,7 @@ export default props => {
                />
 
                <ScrollView>
-                    
+                    {/* App */}
                </ScrollView>
           </View>
      )
