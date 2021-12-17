@@ -6,6 +6,7 @@ import { Header } from 'react-native-elements'
 export default props => {
      return (
           <View>
+               {/* Header */}
                <Header
                     backgroundColor='#000'
                     leftComponent={
