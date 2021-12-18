@@ -8,7 +8,7 @@ export default props => {
           <View>
                {/* Header */}
                <Header
-                    backgroundColor='#900'
+                    backgroundColor='#000'
                     leftComponent={
                          <View style={styles.navbarLogo}>
                               <Image
